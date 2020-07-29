@@ -24,6 +24,16 @@ const io = socketIo(server)
 
 io.on('connection', socket => {
   console.log(chalk.blue(`new connection ${socket.id}`))
+
+  socket.on('chatMessage', message => {
+    console.log(chalk.green(`chatMessage - ${socket.id} :`))
+    // send message to all the sockets, except this socket.
+    socket.broadcast.emit('chatMessage', message)
+  })
+
+  socket.on('disconnect', function () {
+    console.log(chalk.green(`${socket.id} disconnected`))
+  })
 })
 
 if (ENV === 'development') {
