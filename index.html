@@ -18,10 +18,26 @@
       Box 3
     </div>
   </div> -->
-  <ul id="messages"></ul>
-  <form action="">
-    <input id="m" autocomplete="off" /><button>Send</button>
+
+  <div id="room">Rooms</div>
+
+  <form class="name" id="name-form">
+    <input id="m1" autocomplete="off" /><button>Enter a username</button>
   </form>
+
+  <ul id="room-list" class="rooms"></ul>
+
+  <form class="rooms" id="room-form" action="">
+    <input id="m2" autocomplete="off" /><button>Create and join a new room</button>
+  </form>
+
+  <div>
+    <ul id="messages" class="msgs"></ul>
+    <form class="msgs" id="msg-form" action="">
+      <input id="m3" autocomplete="off" /><button>Send</button>
+    </form>
+  </div>
+
 
   <script src="src/index.js"></script>
 </body>
